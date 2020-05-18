@@ -12,6 +12,11 @@
 </head>
 <body>
     @include('layouts.covidnav')
+
+    <h1>
+        @yield('heading')
+    </h1>
+
     @yield('content')
 </body>
 </html>
