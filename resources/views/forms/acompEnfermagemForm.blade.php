@@ -37,3 +37,15 @@
 <script>
     $('#anamnese').removeClass("d-none");
 </script>
+
+<script>
+    function validaSituacao(value) {
+        if (value == 0) {
+            $('#orientaPA').addClass("d-none");
+        }
+        else 
+        {
+            $('#orientaPA').removeClass("d-none");
+        }
+    }
+</script>

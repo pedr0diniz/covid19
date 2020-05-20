@@ -1,4 +1,4 @@
-<fieldset class="form-group d-none" id="orientacaoFuncionarioPA">
+<fieldset class="form-group d-none" id="orientaPA">
     <div class="row">
         <legend class="col-form-label col-sm-12 pt-0">O funcionário foi orientado a procurar o Pronto-Atendimento?</legend>
         <div class="col-sm-8">

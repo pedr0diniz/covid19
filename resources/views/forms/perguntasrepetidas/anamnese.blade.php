@@ -2,7 +2,7 @@
   <fieldset class="form-group d-none" id="anamnese">
     <div>
       <legend class="col-form-label">Assinale os sinais e sintomas que o funcionário refere:</legend>
-      <div class="form-check" id="checktest">
+      <div class="form-check">
         <input class="form-check-input" type="checkbox" class="form-check-input" id="sintoma1">
         <label class="form-check-label" for="sintoma1">Febre</label>
       </div>

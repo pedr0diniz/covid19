@@ -10,5 +10,3 @@
 @section('content2')
 @include('search.acompEnfermagemSearch')
 @endsection
-
-  
