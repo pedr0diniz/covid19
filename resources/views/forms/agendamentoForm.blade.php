@@ -1,5 +1,9 @@
 <form>
     @csrf
+
+    {{-- Nome do Funcionário --}}
+    @include('forms.camposrepetidos.nomeFuncionario')
+
     <div class="form-group row">
       <label for="dtAgendamento" class="col-sm-3 col-form-label">Data do Agendamento:</label>
       <div class="col-sm-4">
@@ -10,6 +14,7 @@
         <input type="time" class="form-control" id="hrAgendamento">
       </div>
     </div>
+    <hr>
 
     <fieldset class="form-group">
       <div class="row">

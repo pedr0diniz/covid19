@@ -1,3 +1,5 @@
+@stack('scripts')
+
 <div class="container" id="mySelection">
     <div class="row">
         <button class="btn btn-dark col-sm-6 rounded-0" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">@yield('option1')</button>

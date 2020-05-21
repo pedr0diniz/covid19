@@ -2,13 +2,7 @@
   @csrf
 
   {{-- Nome do Funcionário --}}
-  <div class="form-group row">
-      <label for="nomeFuncionario" class="col-sm-3 col-form-label">Nome do Funcionário:</label>
-      <div class="col-sm-6">
-        <input type="text" class="form-control" id="nomeFuncionario">
-      </div>
-  </div>
-  <hr>
+  @include('forms.camposrepetidos.nomeFuncionario')
 
   {{-- O funcionário apresenta sintomas? --}}
   <fieldset class="form-group">
@@ -73,7 +67,7 @@
   </div>
 
   {{-- Anamnese (pergunta em comum) --}}
-  @include('forms.perguntasrepetidas.anamnese')
+  @include('forms.camposrepetidos.anamnese')
 
         
   {{-- Assinale todas as morbidades prévias do funcionário: --}}
@@ -185,62 +179,3 @@
     </div>
   </div>
 </form>
-
-<script>
-  function validaSintomas(value) {
-      if (value == 1) {
-        $('#pacienteSintomatico').removeClass("d-none");
-        $('#pacienteAssintomatico').addClass("d-none");
-        $('#ultimoContato').addClass("d-none");
-        zerarCampo('dataContato');
-        $('#anamnese').removeClass("d-none");
-        desmarcarRadio('pacienteAssintomatico');
-      }
-      else {
-        $('#pacienteSintomatico').addClass("d-none");
-        zerarCampo('dataInicioSintomas');
-        $('#pacienteAssintomatico').removeClass("d-none");
-        $('#anamnese').addClass("d-none");
-        desmarcarCheckbox('anamnese');
-      }
-  }
-</script>
-
-<script>
-  function validaContato(value) {
-    if (value == 1) {
-      $('#ultimoContato').removeClass("d-none");
-    }
-    else {
-      $('#ultimoContato').addClass("d-none");
-      zerarCampo('dataContato');
-    }
-  }
-</script>
-
-<script>
-  function validaIsolamento(value) {
-    if (value == 1) {
-      $('#datasIsolamento').removeClass("d-none");
-    }
-    else {
-      $('#datasIsolamento').addClass("d-none");
-      zerarCampo('dataInicioIsolamento');
-      zerarCampo('dataFimIsolamento');
-    }
-  }
-</script>
-
-<script>
-  function desmarcarRadio(divId) {
-    $('#' + divId + ' :radio:enabled').prop('checked', false);
-  }
-
-  function desmarcarCheckbox(divId) {
-    $('#' + divId + ' :checkbox:enabled').prop('checked', false);
-  }
-
-  function zerarCampo(divId) {
-    $('#' + divId).val('');
-  }
-</script>
