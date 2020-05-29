@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Agendamento;
 
 class HomeController extends Controller
 {
@@ -36,11 +37,6 @@ class HomeController extends Controller
         return view('forms');
     }
 
-    public function rdrAgenda()
-    {
-        return view('agenda');
-    }
-
     public function rdrConsultaDados()
     {
         return view('consultaDados');
@@ -48,7 +44,18 @@ class HomeController extends Controller
 
     public function rdrAgendamento()
     {
-        return view('agendamento');
+        $agendamentos = Agendamento::all();
+        //$agendamentos = Agendamento::orderBy('nomeFuncionario', 'desc')->get();
+        //$agendamentos = Agendamento::where('categoriaAcompanhante', 'Medico')->get();
+        //$agendamentos = Agendamento::latest()->get();
+        return view('agendamento', ['agendamentos' => $agendamentos]);
+    }
+
+    public function showAgendamento($id)
+    {
+        $agendamentos = Agendamento::findOrFail($id);
+
+        return view('agendamento', ['agendamentos' => $agendamentos]);
     }
 
     public function rdrPEP()
@@ -71,3 +78,5 @@ class HomeController extends Controller
         return view('acompPsico');
     }
 }
+
+?>

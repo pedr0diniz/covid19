@@ -21,9 +21,9 @@ Route::get('/', function () {
 
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/inicio','HomeController@rdrInicio');
-Route::get('/agenda','HomeController@rdrAgenda');
 Route::get('/consultaDados','HomeController@rdrConsultaDados');
 Route::get('/agendamento', 'HomeController@rdrAgendamento');
+Route::get('/agendamento/{id}', 'HomeController@showAgendamento');
 Route::get('/PEP', 'HomeController@rdrPEP');
 Route::get('/acompEnfermagem', 'HomeController@rdrAcompEnfermagem');
 Route::get('/acompMedico', 'HomeController@rdrAcompMedico');
