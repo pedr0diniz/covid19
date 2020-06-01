@@ -54,8 +54,10 @@ class HomeController extends Controller
     public function showAgendamento($id)
     {
         $agendamentos = Agendamento::findOrFail($id);
-
-        return view('agendamento', ['agendamentos' => $agendamentos]);
+        //dd($agendamentos);
+        return view('agendamento', ['agendamentos' => [$agendamentos]]);
+        //É necessário envolver os registros do banco em arrays de objetos para não quebrar o @foreach.
+        //O @foreach varre arrays de objetos, não objetos em si.
     }
 
     public function rdrPEP()
