@@ -21,10 +21,17 @@ Route::get('/', function () {
 
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/inicio','HomeController@rdrInicio');
+
 Route::get('/consultaDados','HomeController@rdrConsultaDados');
-Route::get('/agendamento', 'HomeController@rdrAgendamento');
-Route::get('/agendamento/{id}', 'HomeController@showAgendamento');
-Route::get('/PEP', 'HomeController@rdrPEP');
-Route::get('/acompEnfermagem', 'HomeController@rdrAcompEnfermagem');
-Route::get('/acompMedico', 'HomeController@rdrAcompMedico');
-Route::get('/acompPsico', 'HomeController@rdrAcompPsico');
+
+Route::get('/agendamento', 'AgendamentoController@rdrAgendamento');
+Route::get('/agendamento/{id}', 'AgendamentoController@showAgendamento');
+Route::post('/agendamento', 'AgendamentoController@store');
+
+Route::get('/PEP', 'PEPController@rdrPEP');
+
+Route::get('/acompEnfermagem', 'AcompEnfermagemController@rdrAcompEnfermagem');
+
+Route::get('/acompMedico', 'AcompMedicoController@rdrAcompMedico');
+
+Route::get('/acompPsico', 'AcompPsicoController@rdrAcompPsico');
