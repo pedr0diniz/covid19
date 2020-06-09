@@ -46,8 +46,11 @@
 
     {{-- Agendar --}}
     <div class="form-group row">
-      <div class="col-sm-10">
+      <div class="col-sm-3">
         <button type="submit" class="btn btn-success">Agendar</button>
+      </div>
+      <div class="col-sm-9">
+        <p class="msg"> {{ session('msg') }}</p>
       </div>
     </div>
   </form>

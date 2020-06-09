@@ -15,10 +15,10 @@ class CreateAgendamentosTable extends Migration
     {
         Schema::create('agendamentos', function (Blueprint $table) {
             $table->id();
-            $table->string('nomeFuncionario');
-            $table->string('cpfFuncionario');
-            $table->string('nomeAcompanhante');
+            $table->integer('id_funcionario');
+            $table->integer('id_funcionario_acompanhante');
             $table->string('categoriaAcompanhante');
+            $table->string('agendarCom');
             $table->date('dataAgendamento');
             $table->time('horaAgendamento');
             $table->string('agendadoPor');

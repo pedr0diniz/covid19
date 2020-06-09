@@ -36,6 +36,6 @@ class AgendamentoController extends Controller
 
         $agendamento->save();
 
-        return redirect('agendamento');
+        return redirect('agendamento')->with('msg', 'Agendamento realizado com sucesso!');
     }
 }
