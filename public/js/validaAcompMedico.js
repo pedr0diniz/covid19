@@ -38,14 +38,16 @@ function validaNecessidadeAfastamento(value) {
 
 function validaNecessidadeAcompanhamento(value) {
     if (value == 1) {
-        $('#reavaliacaoMedica').removeClass("d-none");
+        $('#desejaAgendar').removeClass("d-none");
+        desmarcarRadio('desejaAgendar');
         $('#motivoFimAcompanhamento').addClass("d-none");
         desmarcarRadio('motivoFimAcompanhamento');
-        $('#outrosMotivos').prop('disabled', true);
-        zerarCampo('outrosMotivos');
+        $('#outrosMotivosFimTexto').prop('disabled', true);
+        zerarCampo('outrosMotivosFimTexto');
     }
     else 
     {
+        $('#desejaAgendar').addClass("d-none");
         $('#reavaliacaoMedica').addClass("d-none");
         zerarCampo('dtReavaliacao');
         zerarCampo('hrReavaliacao');
@@ -53,12 +55,34 @@ function validaNecessidadeAcompanhamento(value) {
     }
 }
 
-function habilitaOutros(value) {
+function habilitaOutrosMotivos(value) {
     if (value == 1) {
-        $('#outrosMotivos').prop('disabled', false);
+        $('#outrosMotivosFimTexto').prop('disabled', false);
     }
     else {
-        $('#outrosMotivos').prop('disabled', true);
-        zerarCampo('outrosMotivos');
+        $('#outrosMotivosFimTexto').prop('disabled', true);
+        zerarCampo('outrosMotivosFimTexto');
+    }
+}
+
+function habilitaOutrosSintomas() {
+    if ($('#sintomaOutros').is(':checked'))  {
+        $('#outrosSintomas').prop('disabled', false);
+    }
+    else {
+        $('#outrosSintomas').prop('disabled', true);
+        zerarCampo('outrosSintomas');
+    }
+}
+
+function validaDesejaAgendar(value) {
+    if (value == 1) {
+        $('#reavaliacaoMedica').removeClass("d-none");
+    }
+    else 
+    {
+        $('#reavaliacaoMedica').addClass("d-none");
+        zerarCampo('dtReavaliacao');
+        zerarCampo('hrReavaliacao');
     }
 }

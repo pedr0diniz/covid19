@@ -3,6 +3,7 @@
 @push('scripts')
 <script type="text/javascript" src="{{ asset('js/limparCampos.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/validaAcompMedico.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/habilitarOutros.js') }}"></script>
 @endpush
 
 @section('option1', 'Novo Acompanhamento')

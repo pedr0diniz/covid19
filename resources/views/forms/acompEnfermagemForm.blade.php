@@ -10,6 +10,9 @@
     {{-- Anamnese (pergunta em comum) --}}
     @include('forms.camposrepetidos.anamnese')
 
+    {{-- Esteve em contato com algum caso confirmado da COVID-19 nas últimas duas semanas? --}}
+    @include('forms.camposrepetidos.contatoComInfectado')
+
     {{-- Situação atual em comparação aos acompanhamentos anteriores (ou ao formulário) --}}
     @include('forms.camposrepetidos.situacaoAtual')
 

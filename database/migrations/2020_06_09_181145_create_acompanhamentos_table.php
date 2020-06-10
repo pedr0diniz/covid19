@@ -20,6 +20,7 @@ class CreateAcompanhamentosTable extends Migration
             $table->integer('id_funcionario_acompanhante');
             $table->boolean('houveContato');
             $table->json('sintomas');
+            $table->string('contatoComInfectado');
             $table->string('apresentaPiora');
             $table->boolean('orientadoAoPA');
             $table->string('proximoPasso');

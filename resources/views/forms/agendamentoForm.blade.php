@@ -17,11 +17,13 @@
     </div>
     <hr>
 
-    {{-- Tipo de profissional --}}
+    {{-- Tipo de profissional e Agendar com--}}
     <fieldset class="form-group">
       <div class="row">
+
+        {{-- Tipo de profissional: --}}
         <legend class="col-form-label col-sm-2 pt-0">Tipo de profissional:</legend>
-        <div class="col-sm-10">
+        <div class="col-sm-3">
           <div class="form-check">
             <input class="form-check-input" type="radio" name="profAgendamento" id="profEnfermagem" value="Enfermagem">
             <label class="form-check-label" for="profEnfermagem">
@@ -40,6 +42,17 @@
               Equipe de Psicologia
             </label>
           </div>
+        </div>
+
+        {{-- Agendar com --}}
+        <legend class="col-form-label col-sm-2 pt-0">Agendar com:</legend>
+        <div class="col-sm-5">
+          <select name="agendarCom" id="agendarCom">
+            <option value="" disabled selected>Enfermagem, Médico ou Psicólogo</option>
+            {{-- @foreach ($acompanhantes as $acompanhante)
+                <option value="{{ $acompanhante->nome }}">{{ $acompanhante->nome }}</option>
+            @endforeach --}}
+          </select>
         </div>
       </div>
     </fieldset>

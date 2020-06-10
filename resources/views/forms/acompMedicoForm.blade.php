@@ -10,6 +10,9 @@
     {{-- Anamnese (pergunta em comum) --}}
     @include('forms.camposrepetidos.anamnese')
 
+    {{-- Esteve em contato com algum caso confirmado da COVID-19 nas últimas duas semanas? --}}
+    @include('forms.camposrepetidos.contatoComInfectado')
+
     {{-- Situação atual em comparação aos acompanhamentos anteriores (ou ao formulário) --}}
     @include('forms.camposrepetidos.situacaoAtual')
 
@@ -120,6 +123,28 @@
         <div class="col-12"> <hr> </div>
     </fieldset>
 
+    {{-- Desejar agendar uma reavaliação deste paciente? --}}
+        <fieldset class="form-group d-none" id="desejaAgendar">
+        <div class="row">
+            <legend class="col-form-label col-sm-3 pt-0">Desejar agendar uma reavaliação deste paciente?</legend>
+            <div class="col-sm-8">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" onClick="validaDesejaAgendar(1)" name="desejaAgendar" id="desejoAgendar" value="opcao1">
+                    <label class="form-check-label" for="desejoAgendar">
+                        Sim
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" onClick="validaDesejaAgendar(0)" name="desejaAgendar" id="nDesejoAgendar" value="opcao2">
+                    <label class="form-check-label" for="nDesejoAgendar">
+                        Não
+                    </label>
+                </div>
+            </div> 
+        </div>
+        <div class="col-12"> <hr> </div>
+    </fieldset>
+
     {{-- Reavaliação médica --}}
     <fieldset class="form-group d-none" id="reavaliacaoMedica">
         <div class="form-group row">
@@ -140,35 +165,41 @@
             <legend class="col-form-label col-sm-12 pt-0">Motivo para finalização do acompanhamento:</legend>
             <div class="col-sm-8">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" onClick="habilitaOutros(0)" name="motivoFimAcompanhamento" id="acompNecessario" value="opcao1">
-                    <label class="form-check-label" for="acompNecessario">
+                    <input class="form-check-input" type="radio" onClick="habilitaOutrosMotivos(0)" name="motivoFimAcompanhamento" id="fimPeriodoAcomp" value="opcao1">
+                    <label class="form-check-label" for="fimPeriodoAcomp">
+                        Fim do período de acompanhamento
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" onClick="habilitaOutrosMotivos(0)" name="motivoFimAcompanhamento" id="obitoCOVID19" value="opcao2">
+                    <label class="form-check-label" for="obitoCOVID19">
                         Óbito por COVID-19
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" onClick="habilitaOutros(0)" name="motivoFimAcompanhamento" id="acompNecessario" value="opcao1">
-                    <label class="form-check-label" for="acompNecessario">
+                    <input class="form-check-input" type="radio" onClick="habilitaOutrosMotivos(0)" name="motivoFimAcompanhamento" id="curadoCOVID19" value="opcao3">
+                    <label class="form-check-label" for="curadoCOVID19">
                         Curado da COVID-19
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" onClick="habilitaOutros(0)" name="motivoFimAcompanhamento" id="acompNecessario" value="opcao1">
-                    <label class="form-check-label" for="acompNecessario">
+                    <input class="form-check-input" type="radio" onClick="habilitaOutrosMotivos(0)" name="motivoFimAcompanhamento" id="curadoSemConfirmacao" value="opcao4">
+                    <label class="form-check-label" for="curadoSemConfirmacao">
                         Cura sem confirmação da COVID-19
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" onClick="habilitaOutros(0)" name="motivoFimAcompanhamento" id="acompNecessario" value="opcao1">
-                    <label class="form-check-label" for="acompNecessario">
+                    <input class="form-check-input" type="radio" onClick="habilitaOutrosMotivos(0)" name="motivoFimAcompanhamento" id="outrasDoencasRespiratorias" value="opcao5">
+                    <label class="form-check-label" for="outrasDoencasRespiratorias">
                         Outras doenças respiratórias
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" onClick="habilitaOutros(1)" name="motivoFimAcompanhamento" id="acompNecessario" value="opcao1">
-                    <label class="form-check-label" for="acompNecessario">
+                    <input class="form-check-input" type="radio" onClick="habilitaOutrosMotivos(1)" name="motivoFimAcompanhamento" id="outrosMotivosFimAcomp" value="opcao6">
+                    <label class="form-check-label" for="outrosMotivosFimAcomp">
                         Outros
                     </label>
-                    <input type="text" name="outrosMotivos" id="outrosMotivos" disabled/>
+                    <input type="text" class="col-sm-8" name="outrosMotivosFimTexto" id="outrosMotivosFimTexto" disabled/>
                 </div>
             </div> 
         </div>
