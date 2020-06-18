@@ -27,6 +27,7 @@ Route::get('/consultaDados','HomeController@rdrConsultaDados');
 Route::get('/agendamento', 'AgendamentoController@rdrAgendamento');
 Route::get('/agendamento/{id}', 'AgendamentoController@showAgendamento');
 Route::post('/agendamento', 'AgendamentoController@store');
+Route::delete('/agendamento/{id}', 'AgendamentoController@destroy');
 
 Route::get('/PEP', 'PEPController@rdrPEP');
 
