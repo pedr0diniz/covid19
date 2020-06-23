@@ -14,7 +14,6 @@ function habilitaOutrosSintomasTriagem() {
     }
     else {
         $('#outrosSintomasTriagem').prop('disabled', true);
-        // zerarCampo('outrosSintomasTriagem');
-        $('#outrosSintomasTriagem').val('');
+        zerarCampo('outrosSintomasTriagem');
     }
 }

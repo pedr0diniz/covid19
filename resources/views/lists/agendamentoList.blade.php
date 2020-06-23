@@ -4,7 +4,10 @@
     {{-- Cabeçalho da Lista --}}
     <li class="list-group-item list-group-item-success">
       <div class="row">
-        <div class="col-sm-7">
+        <div class="col-sm-1 text-center">
+          Ações
+        </div>
+        <div class="col-sm-6">
           Funcionário
         </div>
         <div class="col-sm-2 text-center">
@@ -22,26 +25,26 @@
     @foreach ($agendamentos as $agendamento)
       <li class="list-group-item">
         <div class="row">
-          <div class="col-sm-1 text-center">
-            <div class="row text-center">
+          <div class="btn-group col-sm-1" role="group">
               
-              <form action="agendamento/{{ $agendamento->id }}" method="POST">
-                @csrf
-                @method('DELETE')
-                <button type="button" class="btn btn-info btn-sm px-0 py-0" data-toggle="tooltip" data-placement="top" title="Editar">
-                  <img src="{{ asset('img/editar.png')}}">
-                </button>
-              </form>
+            {{-- Botão Editar --}}
+            <form action="agendamento/{{ $agendamento->id }}" method="POST">
+              @csrf
+              @method('DELETE')
+              <button type="button" class="btn btn-info btn-sm px-1 py-0" data-toggle="tooltip" data-placement="top" title="Editar">
+                <img src="{{ asset('img/editar.png')}}">
+              </button>
+            </form>
 
-              <form action="agendamento/{{ $agendamento->id }}" method="POST">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-danger btn-sm px-0 py-0" data-toggle="tooltip" data-placement="top" title="Apagar">
-                  <img src="{{ asset('img/delete.png')}}">
-                </button>
-              </form>
+            {{-- Botão Apagar --}}
+            <form action="agendamento/{{ $agendamento->id }}" method="POST">
+              @csrf
+              @method('DELETE')
+              <button type="submit" class="btn btn-danger btn-sm px-1 py-0" data-toggle="tooltip" data-placement="top" title="Apagar">
+                <img src="{{ asset('img/delete.png')}}">
+              </button>
+            </form>
 
-            </div>
           </div>
           <div class="col-sm-6">
             {{ $agendamento->nome }}

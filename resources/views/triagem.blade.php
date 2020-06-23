@@ -2,6 +2,7 @@
 
 <script type="text/javascript" src="{{ asset('js/validaTriagem.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/habilitarOutros.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/limparCampos.js') }}"></script>
 
 @section('title', 'Triagem')
 
