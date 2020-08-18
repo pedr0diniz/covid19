@@ -38,9 +38,9 @@ class AgendamentoController extends Controller
 
         $agendamento = new Agendamento();
         
-        $agendamento->nomeFuncionario = request('nomeFuncionario');
-        $agendamento->dataAgendamento = request('dtAgendamento'); 
-        $agendamento->horaAgendamento = request('hrAgendamento');
+        $agendamento->id_funcionario = request('id_funcionario');
+        $agendamento->dataAgendamento = request('dataAgendamento'); 
+        $agendamento->horaAgendamento = request('horaAgendamento');
         $agendamento->categoriaAcompanhante = request('profAgendamento');
 
         $agendamento->save();

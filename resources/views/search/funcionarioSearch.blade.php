@@ -5,27 +5,27 @@
         <div class="col-sm-3">
           <input type="text" class="form-control" id="nomeFuncionario" placeholder="Nome do Funcionário">
         </div>
-        <label for="matriculaFuncionario" class="col-sm-3 col-form-label">CPF do Funcionário:</label>
+        <label for="cpfFuncionario" class="col-sm-3 col-form-label">CPF do Funcionário:</label>
         <div class="col-sm-2">
-            <input type="text" class="form-control" id="matriculaFuncionario" placeholder="123.456.789-00">
+            <input type="text" class="form-control" id="cpfFuncionario" placeholder="123.456.789-00">
         </div>
       </div>
   
       <div class="form-group row">
-        <label for="intervaloAtendimento1" class="col-sm-3 col-form-label">Unidade:</label>
+        <label for="unidadeFuncionario" class="col-sm-3 col-form-label">Unidade:</label>
         <div class="col-sm-3">
-          <input type="text" class="form-control" id="intervaloAtendimento1">
+          <input type="text" class="form-control" id="unidadeFuncionario">
         </div>
-        <label for="intervaloAtendimento2" class="col-sm-1 col-form-label"> Distrito:</label>
+        <label for="distritoFuncionario" class="col-sm-1 col-form-label"> Distrito:</label>
         <div class="col-sm-3">
-          <input type="text" class="form-control" id="intervaloAtendimento2">
+          <input type="text" class="form-control" id="distritoFuncionario">
         </div>       
       </div>
   
       <div class="form-group row">
-        <label for="nomeAcomp" class="col-sm-3 col-form-label">Categoria:</label>
+        <label for="categoriaFuncionario" class="col-sm-3 col-form-label">Categoria:</label>
         <div class="col-sm-3">
-          <input type="text" class="form-control" id="nomeAcomp" placeholder="Dr. José">
+          <input type="text" class="form-control" id="categoriaFuncionario" placeholder="Dr. José">
         </div>
       </div>
   
@@ -35,5 +35,3 @@
         </div>
       </div>
   </form>
-
-  

@@ -14,6 +14,7 @@
             Formulários
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ URL::to('funcionario') }}">Funcionário</a>
             <a class="dropdown-item" href="{{ URL::to('agendamento') }}">Agendamento</a>
             <a class="dropdown-item" href="{{ URL::to('PEP') }}">PEP - Prontuário Eletrônico</a>
             <a class="dropdown-item" href="{{ URL::to('acompEnfermagem') }}">Acompanhamento da Enfermagem</a>
