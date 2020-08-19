@@ -27,6 +27,9 @@ Route::get('/triagem','TriagemController@rdrTriagem');
 Route::get('/consultaDados','HomeController@rdrConsultaDados');
 
 Route::get('/funcionario', 'FuncionarioController@rdrFuncionario');
+Route::get('/funcionario/{id}', 'FuncionarioController@showFuncionario');
+Route::post('/funcionario', 'FuncionarioController@store');
+Route::delete('/funcionario/{id}', 'FuncionarioController@destroy');
 
 Route::get('/agendamento', 'AgendamentoController@rdrAgendamento');
 Route::get('/agendamento/{id}', 'AgendamentoController@showAgendamento');
