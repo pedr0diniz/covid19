@@ -1,3 +1,7 @@
+<?php
+  use App\Http\Controllers\AgendamentoController;
+?>
+
 <div class="container">
   <ul class="list-group">
 
@@ -28,10 +32,10 @@
           <div class="btn-group col-sm-1" role="group">
               
             {{-- Botão Editar --}}
-            <form action="agendamento/{{ $agendamento->id }}" method="POST">
+            <form action="{{ url('agendamento/edit/' .$agendamento->id) }}" method="POST">
               @csrf
-              @method('DELETE')
-              <button type="button" class="btn btn-info btn-sm px-1 py-0" data-toggle="tooltip" data-placement="top" title="Editar">
+              @method('GET')
+              <button type="submit" class="btn btn-info btn-sm px-1 py-0" data-toggle="tooltip" data-placement="top" title="Editar">
                 <img src="{{ asset('img/editar.png')}}">
               </button>
             </form>
@@ -50,7 +54,7 @@
             {{ $agendamento->nome }}
           </div>
           <div class="col-sm-2 text-center">
-            {{ $agendamento->dataAgendamento }}
+            {{ AgendamentoController::converterData($agendamento->dataAgendamento) }}
           </div>
           <div class="col-sm-1 text-center">
             {{ $agendamento->horaAgendamento }}

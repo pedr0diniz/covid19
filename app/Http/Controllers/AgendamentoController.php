@@ -14,10 +14,12 @@ class AgendamentoController extends Controller
         ->join('funcionarios', 'funcionarios.id', '=', 'agendamentos.id_funcionario')
         ->select('agendamentos.*', 'funcionarios.nome')
         ->get();
+
+        $editAgendamento = new Agendamento;
         //$agendamentos = Agendamento::orderBy('nomeFuncionario', 'desc')->get();
         //$agendamentos = Agendamento::where('categoriaAcompanhante', 'Medico')->get();
         //$agendamentos = Agendamento::latest()->get();
-        return view('agendamento', ['agendamentos' => $agendamentos]);
+        return view('agendamento', ['agendamentos' => $agendamentos, 'editAgendamento' => $editAgendamento]);
     }
 
     public function showAgendamento($id)
@@ -32,6 +34,22 @@ class AgendamentoController extends Controller
         return view('agendamento', ['agendamentos' => $agendamentos]);
         //É necessário envolver os registros do banco em arrays de objetos para não quebrar o @foreach.
         //O @foreach varre arrays de objetos, não objetos em si.
+    }
+
+    public function editAgendamento($id)
+    {
+        $agendamentos = DB::table('agendamentos')
+        ->join('funcionarios', 'funcionarios.id', '=', 'agendamentos.id_funcionario')
+        ->select('agendamentos.*', 'funcionarios.nome')
+        ->get();
+
+        $editAgendamento = Agendamento::find($id)
+        ->join('funcionarios', 'funcionarios.id', '=', 'agendamentos.id_funcionario')
+        ->select('agendamentos.*', 'funcionarios.nome')
+        ->where('agendamentos.id', $id)
+        ->first();
+
+        return view('agendamento', ['agendamentos' => $agendamentos, 'editAgendamento' => $editAgendamento]);
     }
 
     public function store() {
@@ -52,5 +70,15 @@ class AgendamentoController extends Controller
         $agendamento = Agendamento::findOrFail($id);
         $agendamento->delete();
         return redirect('agendamento');
+    }
+
+    public static function converterData($data)
+    {
+        $converteData = strtotime($data);
+        $converteData = date("d-m-Y", $converteData);
+        $converteData = str_replace('-', '/', $converteData);
+        $data = $converteData;
+
+        return($data);
     }
 }

@@ -33,6 +33,8 @@ Route::delete('/funcionario/{id}', 'FuncionarioController@destroy');
 
 Route::get('/agendamento', 'AgendamentoController@rdrAgendamento');
 Route::get('/agendamento/{id}', 'AgendamentoController@showAgendamento');
+Route::get('/agendamento/edit/{id}', 'AgendamentoController@editAgendamento');
+Route::patch('/agendamento/{id}', 'AgendamentoController@updateAgendamento');
 Route::post('/agendamento', 'AgendamentoController@store');
 Route::delete('/agendamento/{id}', 'AgendamentoController@destroy');
 
