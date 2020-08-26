@@ -30,8 +30,9 @@ class AgendamentoController extends Controller
         ->where('agendamentos.id', $id)
         ->get();
 
+        $editAgendamento = new Agendamento;
         // dd($agendamentos);
-        return view('agendamento', ['agendamentos' => $agendamentos]);
+        return view('agendamento', ['agendamentos' => $agendamentos, 'editAgendamento' => $editAgendamento]);
         //É necessário envolver os registros do banco em arrays de objetos para não quebrar o @foreach.
         //O @foreach varre arrays de objetos, não objetos em si.
     }
@@ -64,6 +65,22 @@ class AgendamentoController extends Controller
         $agendamento->save();
 
         return redirect('agendamento')->with('msg', 'Agendamento realizado com sucesso!');
+    }
+
+    public function update($id)
+    {
+
+        // dd($id);
+        $agendamento = Agendamento::find($id);
+
+        // dd($agendamento);
+        $agendamento->dataAgendamento = request('dataAgendamento'); 
+        $agendamento->horaAgendamento = request('horaAgendamento');
+        $agendamento->categoriaAcompanhante = request('categoriaAcompanhante');
+
+        $agendamento->save();
+        
+        return redirect('agendamento')->with('msg', 'Agendamento alterado com sucesso!');
     }
 
     public function destroy($id) {

@@ -35,7 +35,7 @@
             <form action="{{ url('agendamento/edit/' .$agendamento->id) }}" method="POST">
               @csrf
               @method('GET')
-              <button type="submit" class="btn btn-info btn-sm px-1 py-0" data-toggle="tooltip" data-placement="top" title="Editar">
+              <button type="submit" class="btn btn-info btn-sm px-1 py-0" onclick="desabilitaNome(1)" data-toggle="tooltip" data-placement="top" title="Editar">
                 <img src="{{ asset('img/editar.png')}}">
               </button>
             </form>

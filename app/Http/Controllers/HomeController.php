@@ -22,19 +22,14 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    // public function index()
-    // {
-    //     return view('inicio');
-    // }
+    public function index()
+    {
+        return view('inicio');
+    }
 
     public function rdrInicio()
     {
         return view('inicio');
-    }
-    
-    public function rdrForms()
-    {
-        return view('forms');
     }
 
     public function rdrConsultaDados()
