@@ -34,10 +34,10 @@
           <div class="btn-group col-sm-1" role="group">
               
             {{-- Botão Editar --}}
-            <form action="funcionario/{{ $funcionario->id }}" method="POST">
+            <form action="{{ url('funcionario/edit/' .$funcionario->id) }}" method="POST">
               @csrf
-              @method('DELETE')
-              <button type="button" class="btn btn-info btn-sm px-1 py-0" data-toggle="tooltip" data-placement="top" title="Editar">
+              @method('GET')
+              <button type="submit" class="btn btn-info btn-sm px-1 py-0" data-toggle="tooltip" data-placement="top" title="Editar">
                 <img src="{{ asset('img/editar.png')}}">
               </button>
             </form>

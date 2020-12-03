@@ -77,7 +77,7 @@ if (empty($editAgendamento['nome']))
   </fieldset>
 
   {{-- Agendar, Atualizar e Cancelar Edição --}}
-
+  <div class="form-group row">
     @if ($editAgendamento->nome=="")
 
       <div class="col-sm-2">

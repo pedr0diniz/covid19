@@ -13,7 +13,10 @@ class FuncionarioController extends Controller
         $funcionarios = DB::table('funcionarios')
         ->select('funcionarios.*')
         ->get();
-        return view('funcionario', ['funcionarios' => $funcionarios]);
+
+        $editFuncionario = new Funcionario;
+
+        return view('funcionario', ['funcionarios' => $funcionarios, 'editFuncionario' => $editFuncionario]);
     }
 
     public function showFuncionario($id)
@@ -23,10 +26,26 @@ class FuncionarioController extends Controller
         ->where('funcionarios.id', $id)
         ->get();
 
+        $editFuncionario = new Funcionario;
+
         // dd($agendamentos);
-        return view('funcionario', ['funcionarios' => $funcionarios]);
+        return view('funcionario', ['funcionarios' => $funcionarios, 'editFuncionario' => $editFuncionario]);
         //É necessário envolver os registros do banco em arrays de objetos para não quebrar o @foreach.
         //O @foreach varre arrays de objetos, não objetos em si.
+    }
+
+    public function editFuncionario($id)
+    {
+        $funcionarios = DB::table('funcionarios')
+        ->select('funcionarios.*')
+        ->get();
+
+        $editFuncionario = Funcionario::find($id)
+        ->select('funcionarios.*')
+        ->where('funcionarios.id', $id)
+        ->first();
+
+        return view('funcionario', ['funcionarios' => $funcionarios, 'editFuncionario' => $editFuncionario]);
     }
 
     public function store() {
@@ -46,6 +65,23 @@ class FuncionarioController extends Controller
         $funcionario->save();
 
         return redirect('funcionario')->with('msg', 'Cadastro realizado com sucesso!');
+    }
+
+    public function update($id)
+    {
+
+        $funcionario = Funcionario::find($id);
+
+        $funcionario->telefone = request('telefone');
+        $funcionario->email = request('email');
+        $funcionario->distrito = request('distrito');
+        $funcionario->unidade = request('unidade');
+        $funcionario->categoriaAcompanhante = request('categoriaAcompanhante');
+
+        $funcionario->save();
+
+        return redirect('funcionario')->with('msg', 'Cadastro de funcionário alterado com sucesso!');
+
     }
 
     public function destroy($id) {

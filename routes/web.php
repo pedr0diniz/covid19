@@ -28,6 +28,8 @@ Route::get('/consultaDados','HomeController@rdrConsultaDados');
 
 Route::get('/funcionario', 'FuncionarioController@rdrFuncionario');
 Route::get('/funcionario/{id}', 'FuncionarioController@showFuncionario');
+Route::get('/funcionario/edit/{id}', 'FuncionarioController@editFuncionario');
+Route::patch('/funcionario/{id}', 'FuncionarioController@update');
 Route::post('/funcionario', 'FuncionarioController@store');
 Route::delete('/funcionario/{id}', 'FuncionarioController@destroy');
 
