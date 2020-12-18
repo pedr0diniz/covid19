@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-    <a class="navbar-brand">Secretaria Municipal de Saúde - Natal</a>
+    <a class="navbar-brand">Sistema de Teleatendimento da COVID-19</a>
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
